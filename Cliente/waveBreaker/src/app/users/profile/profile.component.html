@@ -1,0 +1,33 @@
+<body>
+  <main>
+    <div *ngIf="user" class="profile-container">
+      <h1>Mi perfil</h1>
+      <div class="profile-info">
+        <img src="{{user.avatar}}" alt="Profile Picture" class="profile-image">
+        <div>
+          <div class="profile-name">{{user.userName}}</div>
+          <div class="profile-username">{{user.email}}</div>
+          <div *ngIf="game" class="stats">
+            <h4>Estadísticas de juego</h4>
+            <div class="gameStats">
+              <p>Enemigos derrotados: {{game.enemiesDefeated}}</p>
+              <p>Partidas jugadas: {{game.gamesPlayed}}</p>
+              <p>Partidas ganadas: {{game.victories}}</p>
+              <p label>Monedas totales: <label class="coins">{{game.totalCoins}}<i class="fas fa-coins ms-1"></i></label></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-details">
+        <div class="profile-label">Nivel:
+          <div class="profile-value">{{user.level}}</div>
+        </div>
+        <div class="profile-label">Experiencia:
+          <div class="profile-value">{{user.exp + "/" + user.maxExp}}</div>
+        </div>
+      </div>
+      <a *ngIf="me || userMe.role==='ADMIN'" class="btn btn-primary" [routerLink]="['/users/edit']">Editar perfil</a>
+    </div>
+  </main>
+
+</body>

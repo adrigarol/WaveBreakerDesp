@@ -1,0 +1,70 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+<main>
+  <form [formGroup]="formRegister" (ngSubmit)="addUser()">
+    <legend>WaveBreaker</legend>
+    <legend *ngIf="!edit">Crea una cuenta</legend>
+    <legend *ngIf="edit">Editar perfil</legend>
+
+    <div class="mb-3">
+      <label for="userName">Nombre:</label>
+      <input type="text" class="form-control rounded-pill form-control-lg bg-purple" name="userName" id="userName" formControlName="userName" placeholder="Introduce el nombre de usuario"
+        [ngClass]="validClasses(userNameControl, 'is-valid','is-invalid')" value="{{newUser.userName}}"/>
+      <div class="invalid-feedback" *ngIf="userNameControl.errors?.['required']">
+        Nombre es un campo obligatorio.
+      </div>
+    </div>
+    <div formGroupName="emailGroup">
+      <div class="mb-3">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control rounded-pill form-control-lg bg-purple" id="email" name="email" placeholder="Introduce el email" formControlName="email"
+          [ngClass]="validClasses(emailControl, 'is-valid','is-invalid')" value="{{newUser.email}}"/>
+        <div class="invalid-feedback" *ngIf="emailControl.errors?.['required']">
+          Email es un campo obligatorio.
+        </div>
+        <div class="invalid-feedback" *ngIf="emailControl.errors?.['email']">
+          El campo debe ser un email.
+        </div>
+      </div>
+
+    </div>
+    <div class="mb-3">
+      <label for="password">Contraseña:</label>
+      <input type="password" class="form-control rounded-pill form-control-lg bg-purple" name="password" id="password" formControlName="password"
+        placeholder="Introduce la contraseña" [ngClass]="validClasses(passwordControl, 'is-valid','is-invalid')"/>
+      <div class="invalid-feedback" *ngIf="passwordControl.errors?.['required']">
+        Contraseña es un campo obligatorio.
+      </div>
+      <div class="invalid-feedback" *ngIf="passwordControl.errors?.['pattern']">
+        La contraseña debe tener al menos 4 caracteres.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="avatar">Avatar</label>
+      <input type="file" class="form-control rounded-pill form-control-lg bg-purple" id="avatar" name="avatar" #fileImage (change)="changeImage(fileImage)"
+       formControlName="avatar" [ngClass]="validClasses(avatarControl,'is-valid','is-invalid')"/>
+
+        <img [src]="newUser.avatar" [ngClass]="{ 'd-none': !newUser.avatar }" class="avatar rounded-circle me-3" />
+        <p class="text-danger" id="errorInfo"></p>
+        <div *ngIf="!edit">
+          <button type="submit" [disabled]="formRegister.invalid" class="btn btn-lg btn-block rounded-pill mt-4">Crear</button>
+          <a class="btn btn-lg btn-block rounded-pill mt-2" [routerLink]="['/auth/login']" role="button">Ir a login</a>
+        </div>
+        <div *ngIf="edit">
+          <button type="submit" [disabled]="formRegister.invalid" class="btn btn-lg btn-block rounded-pill mt-4">Editar</button>
+          <a class="btn btn-lg btn-block rounded-pill mt-2" [routerLink]="['/users', 'me']" role="button">Volver a mi perfil</a>
+        </div>
+    </div>
+    <div class="invalid-feedback">An image is required.</div>
+
+
+  </form>
+</main>
+
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,54 @@
+<body class="mt-5">
+  <main>
+    <div *ngIf="post" class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="user-info justify-content-end mb-3" [routerLink]="['/users', post.user._id]">
+            <img src="{{post.user.avatar}}" class="rounded-circle mr-2" alt="avatar">
+            <a class="username ms-2">{{post.user.userName}}</a>
+            <button *ngIf="user && post.user._id===user._id" [routerLink]="['/forum']" class="btn delete btn-primary float-end" (click)="deletePost()">Borrar</button>
+          </div>
+          <hr>
+          <h3 class="card-title">{{post.title}}</h3>
+          <p class="card-text">{{post.description}}</p>
+        </div>
+      </div>
+
+
+      <section class="comments mt-3 p-3">
+        <h5 class="mb-3">Comentarios</h5>
+        <div *ngFor="let c of post.comments" class="card mb-3">
+          <div class="card-body">
+            <div class="user-info justify-content-end mb-3" [routerLink]="['/users', c.user._id]">
+              <img src="{{c.user.avatar}}" class="rounded-circle mr-2" alt="avatar">
+              <a class="username ms-2">{{c.user.userName}}</a>
+              <button *ngIf="user && c.user._id===user._id" class="btn delete btn-primary float-end" (click)="deleteComment(post, c)">Borrar</button>
+            </div>
+            <hr>
+            <p class="card-text ms-5">{{c.description}}</p>
+          </div>
+        </div>
+        <!-- Add comment form -->
+      <div *ngIf="user" class="card mt-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Añade un comentario</h5>
+          <form [formGroup]="formComment" (ngSubmit)="addComment(post, user)">
+            <div class="form-group">
+              <textarea class="form-control" id="comment" name="comment" formControlName="comment" rows="3" placeholder="Introduce tu comentario" [ngClass]="validClasses(commentControl, 'is-valid','is-invalid')"></textarea>
+              <div class="invalid-feedback mb-2" *ngIf="commentControl.errors?.['required']">
+                Comentario es un campo obligatorio.
+              </div>
+            </div>
+            <button type="submit" [disabled]="formComment.invalid" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+      </section>
+
+
+
+    </div>
+  </main>
+</body>
+
+

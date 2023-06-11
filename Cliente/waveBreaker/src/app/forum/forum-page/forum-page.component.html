@@ -1,0 +1,32 @@
+<!-- <main>
+  <label>FORO</label>
+  <div *ngIf="posts" class="posts">
+    <p *ngFor="let p of posts">{{p.title}}</p>
+  </div>
+<a class="btn btn-lg btn-block rounded-pill mt-2" [routerLink]="['/forum/create']" role="button">Crear nuevo post</a>
+
+</main> -->
+<body class="mt-5">
+  <main>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">WaveBreaker Foro</h1>
+      <button [routerLink]="['/forum/create']" class="btn btn-primary mb-3">Crear nuevo post</button>
+      <div *ngFor="let p of posts" class="card mb-3" >
+        <div class="card-body">
+          <div class="user-info justify-content-end mb-3">
+            <img src="{{p.user.avatar}}" class="rounded-circle mr-2" alt="avatar" [routerLink]="['/users', p.user._id]">
+            <a class="username ms-2" [routerLink]="['/users', p.user._id]">{{p.user.userName}}</a>
+            <button *ngIf="user && p.user._id===user._id" class="btn delete btn-primary float-end" (click)="deletePost(p)">Borrar</button>
+          </div>
+          <hr>
+          <div class="ms-5 me-5">
+            <h5 class="card-title text-justify mb-3">{{p.title}}</h5>
+            <button [routerLink]="['/forum', p._id]" class="btn btn-primary">Ver post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+

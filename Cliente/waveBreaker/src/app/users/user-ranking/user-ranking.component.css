@@ -1,0 +1,46 @@
+main {
+  background-color: #1B1371;
+  /* 0c2e9e */
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.container{
+  width: 30%;
+}
+
+.card{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color:#130e53;
+}
+
+.card:hover{
+  background-color: #16105e;
+  cursor:pointer;
+}
+
+img{
+  height: 85%;
+  width: 85%;
+}
+
+.card-text{
+  text-align: center;
+}
+
+.profile-name{
+  color: #f043d9;
+}
+
+.card-footer{
+  color: #f0ed31;
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  background-color: #400e50;
+}

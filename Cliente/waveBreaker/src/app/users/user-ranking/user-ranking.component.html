@@ -1,0 +1,19 @@
+<body class="mt-5">
+  <main>
+    <div class="container">
+    <h1 class="text-center mb-4">Ranking</h1>
+      <div *ngFor="let u of users; let indexOfelement=index">
+        <div class="profile-info card mb-3 p-2" [routerLink]="['/users', u._id]">
+        <img src="{{u.avatar}}" alt="Profile Picture" class="profile-image rounded-circle">
+        <div class="card-text">
+          <div class="profile-name m-2">{{u.userName}}</div>
+          <div class="profile-value m-2">{{"Nivel: " + u.level}}</div>
+        </div>
+        <div class="card-footer">{{"#" + (indexOfelement+1)}}</div>
+      </div>
+    </div>
+    </div>
+
+  </main>
+</body>
+

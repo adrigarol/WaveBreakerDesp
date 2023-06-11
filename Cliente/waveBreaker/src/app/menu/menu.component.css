@@ -1,0 +1,54 @@
+nav{
+  font-family: "Press Start 2P", cursive;
+  background-color: #400e50;
+  color: #f0ed31;
+  padding: 10px;
+  display: flex;
+}
+
+a{
+  color: #f0ed31;
+}
+
+a:hover{
+  color: #c07dfb;
+}
+
+h1{
+  color:#fff;
+  cursor: pointer;
+}
+
+h1:hover{
+  color:#c07dfb;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.logout{
+  cursor: pointer;
+}
+
+
+/* .navbar-nav .nav-link {
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+} */
+ul{
+  width: 100%;
+}
+.dropdown-menu {
+  background-color: #333;
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+.dropdown-item:hover {
+  background-color: #555;
+}
+

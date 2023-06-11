@@ -1,0 +1,52 @@
+main {
+  background-color: #1B1371;
+  font-family: "Press Start 2P", cursive;
+  margin: 0;
+  padding: 5%;
+  height: 100vh;
+}
+
+.container{
+  background-color: #130e53;
+  border-radius: 1%;
+}
+label{
+  color: #fff;
+}
+
+.btn {
+  width: 20%;
+  padding: 10px;
+  background-color: #c033bb;
+  border: none;
+  color: #f0ed31;
+  cursor: pointer;
+  font-size: 8px;
+}
+legend {
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.card{
+  background-color: #400e50;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #c07dfb;
+}
+
+
+p{
+  text-align: center;
+}
+
+.coins, .cost{
+
+  color: #f0ed31;
+}
+

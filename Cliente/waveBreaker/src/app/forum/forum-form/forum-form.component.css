@@ -1,0 +1,66 @@
+body{
+  background-color: #1B1371;
+  height: 100vh;
+}
+main {
+  /* 0c2e9e */
+  color: #f043d9;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+legend {
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+input,textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #3c365e;
+  color:#fff;
+  border: none;
+}
+
+input:focus, textarea:focus{
+  background-color: #fff;
+  color: black;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #c033bb;
+  border: none;
+  color: #f0ed31;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #c07dfb;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+  height:100px;
+  border-radius: 50%;
+}
+
+form{
+  background-color: #130e53;
+  padding: 20px;
+  border-radius: 5%;
+  margin-top: 50px;
+}

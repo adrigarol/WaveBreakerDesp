@@ -1,0 +1,30 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+
+<body class="mt-5">
+  <main>
+    <form [formGroup]="formForum" (ngSubmit)="addPost()">
+      <legend>WaveBreaker</legend>
+      <legend>Nuevo Post</legend>
+      <div class="mb-3">
+        <label for="postTitle">Título:</label>
+        <input type="text" class="form-control rounded-pill form-control-lg bg-purple" name="postTitle" id="postTitle" formControlName="postTitle" placeholder="Introduce el título del post"
+          [ngClass]="validClasses(postTitleControl, 'is-valid','is-invalid')"/>
+        <div class="invalid-feedback" *ngIf="postTitleControl.errors?.['required']">
+          Título es un campo obligatorio.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description">Descripción:</label>
+        <textarea type="text" class="form-control rounded-pill form-control-lg bg-purple" name="description" id="description" formControlName="description"
+          placeholder="Introduce la descripción" [ngClass]="validClasses(descriptionControl, 'is-valid','is-invalid')"></textarea>
+        <div class="invalid-feedback" *ngIf="descriptionControl.errors?.['required']">
+          Descripción es un campo obligatorio.
+        </div>
+      </div>
+      <button type="submit" [disabled]="formForum.invalid" class="btn btn-lg btn-block rounded-pill mt-4">Crear</button>
+    </form>
+  </main>
+</body>
+

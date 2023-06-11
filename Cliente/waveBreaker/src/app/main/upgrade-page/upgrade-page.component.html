@@ -1,0 +1,30 @@
+<main>
+  <legend>MEJORAS</legend>
+  <div class="container pt-2 pb-2">
+    <div class="coins d-flex justify-content-end" *ngIf="game">
+      <label class="me-1">Tus monedas:</label> {{ game.coins }}<i class="fas fa-coins ms-1"></i>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-4 mb-4" *ngFor="let u of upgrades; let indexOfelement=index">
+        <div class="card shadow">
+          <div class="card-body">
+            <button class="btn rounded-pill float-end" (click)="upgrade(game, indexOfelement)">
+              MEJORAR
+            </button>
+            <h4 class="card-title">{{ u.name }}</h4>
+            <hr>
+            <div class="card-text d-flex justify-content-center mb-2">
+              <p>{{ 'Nivel: ' + u.currentLevel}}</p>
+              <p class="cost ms-auto">{{"Coste: " + u.currentCost}}<i class="fas fa-coins ms-1"></i></p>
+            </div>
+            <p class="card-text">{{ u.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
