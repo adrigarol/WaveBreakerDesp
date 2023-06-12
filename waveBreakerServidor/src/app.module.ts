@@ -8,7 +8,7 @@ import { ForumModule } from './forum/forum.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/waveBreaker'),
+    MongooseModule.forRoot('mongodb://mymongodb/waveBreaker'),
     GameModule,
     UserModule,
     ForumModule,
