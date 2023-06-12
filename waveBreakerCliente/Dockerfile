@@ -18,7 +18,7 @@ RUN npm run build --prod
 
 # Configurar el servidor HTTP para servir la aplicación compilada
 FROM nginx:latest
-COPY --from=0 /usr/src/app/dist/mi-viaje /usr/share/nginx/html
+COPY --from=0 /usr/src/app/dist/wave-breaker /usr/share/nginx/html
 
 # Exponer el puerto en el que se ejecutará la aplicación (por defecto, el puerto 80 de nginx)
 EXPOSE 80
