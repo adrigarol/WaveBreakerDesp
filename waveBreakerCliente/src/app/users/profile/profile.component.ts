@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { User } from 'src/app/users/interfaces/user.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Game } from 'src/app/main/interfaces/game';
-import { GameService } from 'src/app/main/services/game.service';
+import { Game } from 'src/app/game/interfaces/game';
+import { GameService } from 'src/app/game/services/game.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -15,7 +15,6 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class ProfileComponent implements OnInit{
   user!:User;
-  userMe!:User;
   game!:Game;
   me=false;
   constructor(
@@ -34,7 +33,6 @@ export class ProfileComponent implements OnInit{
             this.me=true;
           }
         })
-        this.userService.getUserById().subscribe(result=>this.userMe=result);
         this.user = data['user'];
         this.gameService.getByUserId(this.user._id).subscribe(res=>this.game=res);
       }

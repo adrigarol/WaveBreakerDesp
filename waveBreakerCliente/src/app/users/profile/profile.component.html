@@ -1,7 +1,8 @@
 <body>
   <main>
     <div *ngIf="user" class="profile-container">
-      <h1>Mi perfil</h1>
+      <h1 *ngIf="me">Mi perfil</h1>
+      <h1 *ngIf="!me">{{user.userName + " "}} perfil</h1>
       <div class="profile-info">
         <img src="{{user.avatar}}" alt="Profile Picture" class="profile-image">
         <div>
@@ -26,7 +27,7 @@
           <div class="profile-value">{{user.exp + "/" + user.maxExp}}</div>
         </div>
       </div>
-      <a *ngIf="me || userMe.role==='ADMIN'" class="btn btn-primary" [routerLink]="['/users/edit']">Editar perfil</a>
+      <a *ngIf="me" class="btn btn-primary" [routerLink]="['/users/edit']">Editar perfil</a>
     </div>
   </main>
 

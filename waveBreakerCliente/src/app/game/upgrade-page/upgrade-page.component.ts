@@ -17,12 +17,12 @@ export class UpgradePageComponent implements OnInit{
 
   game!:Game;
 
-  upgrades:Upgrade[]=[{name: "Ataque", description: "Aumenta un 5% el ataque con cada mejora", currentLevel: 1, maxLevel: 5, cost: 200, currentCost: 200, image: "asdas"},
-  {name: "Defensa", description: "Aumenta un 5% la defensa con cada mejora", currentLevel: 1, maxLevel: 5, cost: 200, currentCost: 200, image: "asdas"},
-  {name: "Regeneración", description: "Aumenta un 0.2 la regeneración de salud", currentLevel: 1, maxLevel: 5, cost: 150, currentCost: 150, image: "asdas"},
-  {name: "PV Máx", description: "Aumenta un 10% la vitalidad máxima", currentLevel: 1, maxLevel: 5, cost: 100, currentCost: 100, image: "asdas"},
-  {name: "Velocidad", description: "Aumenta un 10% la velocidad de movimiento", currentLevel: 1, maxLevel: 5, cost: 150,  currentCost: 200, image: "asdas"},
-  {name: "Experiencia", description: "Aumenta un 5% la experiencia obtenida", currentLevel: 1, maxLevel: 5, cost: 250,  currentCost: 250, image: "asdas"}];
+  upgrades:Upgrade[]=[{name: "Ataque", description: "Aumenta un 5% el ataque con cada mejora", currentLevel: 1, cost: 200, currentCost: 200},
+  {name: "Defensa", description: "Aumenta un 5% la defensa con cada mejora", currentLevel: 1, cost: 200, currentCost: 200},
+  {name: "Regeneración", description: "Aumenta en 1 la regeneración de salud", currentLevel: 1, cost: 150, currentCost: 150},
+  {name: "PV Máx", description: "Aumenta un 10% la vitalidad máxima", currentLevel: 1, cost: 100, currentCost: 100},
+  {name: "Velocidad", description: "Aumenta un 10% la velocidad de movimiento", currentLevel: 1, cost: 150,  currentCost: 200},
+  {name: "Experiencia", description: "Aumenta un 5% la experiencia obtenida", currentLevel: 1, cost: 250,  currentCost: 250}];
 
 
   constructor(

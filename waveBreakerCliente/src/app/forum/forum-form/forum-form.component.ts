@@ -77,6 +77,12 @@ export class ForumFormComponent implements OnInit {
         };
         this.forumService.createPost(post).subscribe({
           next:()=>{
+            creator.exp+=30;
+            if(creator.exp>=creator.maxExp){
+              creator.exp=creator.exp-creator.maxExp;
+              creator.maxExp=creator.maxExp*2;
+            }
+            this.userService.edit(creator).subscribe();
             this.saved=true;
             this.router.navigate(['/forum']);
           }

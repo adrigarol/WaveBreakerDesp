@@ -4,7 +4,7 @@ import { UserLogin } from '../../users/interfaces/user.interface';
 import { AuthService } from '../services/auth.service';
 import { TokenResponse } from '../interfaces/responses';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { GameService } from 'src/app/main/services/game.service';
+import { GameService } from 'src/app/game/services/game.service';
 import { FormGroup, ReactiveFormsModule, FormControl, NonNullableFormBuilder, Validators } from '@angular/forms';
 
 @Component({

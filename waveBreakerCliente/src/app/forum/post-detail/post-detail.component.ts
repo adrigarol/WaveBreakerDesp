@@ -54,7 +54,16 @@ export class PostDetailComponent implements OnInit {
     };
 
     post.comments.push(comment);
-    this.forumService.updatePost(post, post._id).subscribe();
+    this.forumService.updatePost(post, post._id).subscribe({
+      next: () =>{
+        user.exp+=10;
+            if(user.exp>=user.maxExp){
+              user.exp=user.exp-user.maxExp;
+              user.maxExp=user.maxExp*2;
+            }
+            this.userService.edit(user).subscribe();
+      }
+    });
     this.saved=true;
     this.formComment.reset();
     this.saved=false;

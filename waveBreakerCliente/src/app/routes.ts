@@ -11,7 +11,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'game',
     loadChildren:()=>
-    import('./main/routes').then((m)=>m.MAIN_ROUTES),
+    import('./game/routes').then((m)=>m.GAME_ROUTES),
     canActivate: [AuthGuard]
   },
 

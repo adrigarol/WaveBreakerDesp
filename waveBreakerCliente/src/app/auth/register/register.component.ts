@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { Game } from 'src/app/main/interfaces/game';
-import { GameService } from 'src/app/main/services/game.service';
+import { Game } from 'src/app/game/interfaces/game';
+import { GameService } from 'src/app/game/services/game.service';
 import { User } from '../../users/interfaces/user.interface';
 import { AuthService } from '../services/auth.service';
 import { FormGroup, FormControl, NonNullableFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -114,7 +114,7 @@ export class RegisterComponent implements OnInit {
     if(!this.edit){
       this.authService.register(this.newUser).subscribe({
         next: (user) => {
-          const upgrades=[1,1];
+          const upgrades=[1,1,1,1,1,1];
           const game: Game={
             coins: 100,
             userId: user._id,
