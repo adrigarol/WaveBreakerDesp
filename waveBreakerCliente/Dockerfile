@@ -21,7 +21,7 @@ FROM nginx:latest
 COPY --from=0 /usr/src/app/dist/wave-breaker /usr/share/nginx/html
 
 # Exponer el puerto en el que se ejecutará la aplicación (por defecto, el puerto 80 de nginx)
-EXPOSE 80
+EXPOSE 8080
 
 # Comando para iniciar el servidor nginx
 CMD ["nginx", "-g", "daemon off;"]
